@@ -2,6 +2,8 @@
 #date: 11/17/2021
 #description: this program serves as a dictionary for storing employee names, salaries,
 # ID number, and email.
+
+
 class Employee:
     # Initializing the class variables
     def __init__(self, employee_name, id_number, salary, email_address):
