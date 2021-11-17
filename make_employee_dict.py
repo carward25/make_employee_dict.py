@@ -4,38 +4,31 @@
 
 #Define the class Employee.
 
-class Employee:
-    def __init__(self, name, ID_number, salary, email):
-        self.name = name
-        self.ID_number = ID_number
-        self.salary = salary
+class Employee():
+    def __init__(self, name, Id, sal, email):
+        self.employee_name = name
+        self.ID_number = Id
+        self.salary = sal
         self.email_address = email
-def make_employee_dict(list_names, list_ID, list_salary, list_email):
+
+
+def make_employee_dict(names, ids, salaries, emails):
     employee_dict = {}
-    list_len = len(list_ID)
-    for i in range(list_len):
-        name = list_names[i]
-        id_num = list_ID[i]
-        salary = list_salary[i]
-        email = list_email[i]
-        employee_dict[id_num] = Employee(name, id_num, salary, email)
+
+    for i in range(len(names)):
+        emp = Employee(names[i], ids[i], salaries[i], emails[i])
+        employee_dict[ids[i]] = emp
     return employee_dict
 
+
 def main():
+    names = ['John', 'Peter', 'Marsha', 'Jason']
+    ids = [1, 2, 3, 4]
+    salaries = [1200, 1300, 1400, 1500]
+    emails=['john@email.com','peter@email.com','marsha@email.com','jason@email.com']
 
-    sample_names = ["NAME 1", "NAME 2", "NAME 3", "NAME 4"]
-    sample_ids = ["ID1", "ID2", "ID3", "ID4"]
-    sample_salaries = [1000, 2000, 3000, 4000]
-    sample_emails = ["abc@xyz.com", "xyz@abc.com", "sample@sample.com", "aaa@bbb.com"]
-    result = (make_employee_dict(sample_names, sample_ids, sample_salaries, sample_emails))
-
-    for i in result:
+    emp_dict = make_employee_dict(names,ids,salaries,emails)
+    print(emp_dict)
 
 
-        print(i+": ")
-        print("Name:", result[i].name)
-        print("ID NUMBER:", result[i].ID_number)
-        print("SALARY:", result[i].salary)
-        print("EMAIL:", result[i].email_address)
-        print()
 main()
