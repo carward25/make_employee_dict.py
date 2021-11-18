@@ -23,7 +23,6 @@ class Employee:
     def get_email_address(self):
         return self.__email
 
-
 def make_employee_dict(names, ids, salaries, emails):
     employee_dict = dict()
     for i in range(len(names)):
